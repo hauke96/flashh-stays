@@ -2,7 +2,7 @@
 Description=Flashh-stays timer
 
 [Timer]
-OnCalendar=*-*-* 8..23:0/15
+OnCalendar=*-*-* 8..23:0/5
 #OnCalendar=*:0/1
 
 [Install]
