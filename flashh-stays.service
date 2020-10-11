@@ -1,0 +1,12 @@
+[Unit]
+Description=FlasHH stays
+[Service]
+#Type=oneshot
+#PrivateTmp=true
+WorkingDirectory=/root/flashh-stays/
+ExecStart=/root/flashh-stays/flashh-stays.sh
+#/usr/bin/certbot renew --pre-hook "bash -c \"cd /root/simple-task-manager && docker-compose -f docker-compose.test.yml stop\"" --post-hook "bash -c \"cd /root/simple-task-manager && docker-compose -f docker-compose.test.yml stop\""
+# old: ExecStart=/usr/bin/certbot renew --post-hook "bash -c \"cd /root/simple-task-manager && docker-compose start\""
+
+[Install]
+WantedBy=multi-user.target
