@@ -16,11 +16,11 @@ set ytics 10
 
 # Background grid
 set grid
-set style line 1 lc rgb '#aaaaaa' lt 0
+set style line 1 lc rgb '#000000' lt 0 lw 1.25
 set grid xtics ytics ls 1
 
 # PNG rendering config
-set terminal png size 900,600 enhanced font 'Noto Sans,10'
+set terminal pngcairo size 900,600 enhanced font 'Noto Sans,10'
 set output 'flashh-stays_${date}.png'
 
 # Start the plot
