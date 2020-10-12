@@ -16,7 +16,7 @@ set ytics 10
 
 # Background grid
 set grid
-set style line 1 lc rgb '#000000' lt 0 lw 1.25
+set style line 1 lc rgb '#505050' dt 3
 set grid xtics ytics ls 1
 
 # PNG rendering config
