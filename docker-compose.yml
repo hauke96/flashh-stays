@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  server:
+    build:
+      network: host
+      context: ./
+    container_name: flashh-stays-server
+    network_mode: host
+    restart: unless-stopped
+    ports:
+      - "22761:22761"
+    volumes:
+      - ./:/usr/share/nginx/html/
+    logging:
+      driver: 'journald'
