@@ -20,8 +20,6 @@ set format y "%A\n%Y-%m-%d"
 set ytics 60*60*24
 unset mytics
 
-set zrange [0:150]
-
 # Für grün-rot verlauf abh. von Besucherzahl
 set cbrange [0:150]
 set cbtics 10
