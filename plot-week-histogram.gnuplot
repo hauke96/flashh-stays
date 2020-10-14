@@ -34,6 +34,16 @@ set grid xtics ytics ls 1
 set terminal pngcairo size 900,600 enhanced font 'Noto Sans,10'
 set output 'week-${week}-histogram.png'
 
+set object 1 rect from strptime("%H:%M","00:00"),(strptime("%Y-%m-%d","${mo}")-60*60*24) to strptime("%H:%M","10:00"),strptime("%Y-%m-%d","${fr}") front fc rgb "#65e0e0e0" fs solid noborder
+set object 2 rect from strptime("%H:%M","23:00"),(strptime("%Y-%m-%d","${mo}")-60*60*24) to strptime("%H:%M","23:59"),strptime("%Y-%m-%d","${fr}") front fc rgb "#65e0e0e0" fs solid noborder
+set object 3 rect from strptime("%H:%M","00:00"),strptime("%Y-%m-%d","${fr}") to strptime("%H:%M","09:00"),strptime("%Y-%m-%d","${su}")+60*60*24 front fc rgb "#65e0e0e0" fs solid noborder
+set object 4 rect from strptime("%H:%M","22:00"),strptime("%Y-%m-%d","${fr}") to strptime("%H:%M","23:59"),strptime("%Y-%m-%d","${su}")+60*60*24 front fc rgb "#65e0e0e0" fs solid noborder
+
+set object 5 rect from strptime("%H:%M","00:00"),(strptime("%Y-%m-%d","${mo}")-60*60*24) to strptime("%H:%M","10:00"),strptime("%Y-%m-%d","${fr}") front fc rgb "gray" fs transparent pattern 5 noborder
+set object 6 rect from strptime("%H:%M","23:00"),(strptime("%Y-%m-%d","${mo}")-60*60*24) to strptime("%H:%M","23:59"),strptime("%Y-%m-%d","${fr}") front fc rgb "gray" fs transparent pattern 5 noborder
+set object 7 rect from strptime("%H:%M","00:00"),strptime("%Y-%m-%d","${fr}") to strptime("%H:%M","09:00"),strptime("%Y-%m-%d","${su}")+60*60*24 front fc rgb "gray" fs transparent pattern 5 noborder
+set object 8 rect from strptime("%H:%M","22:00"),strptime("%Y-%m-%d","${fr}") to strptime("%H:%M","23:59"),strptime("%Y-%m-%d","${su}")+60*60*24 front fc rgb "gray" fs transparent pattern 5 noborder
+
 # Start the histogram plot
 plot 'mo.csv' using 1:(strptime("%Y-%m-%d", "${mo}")):2 with lines palette lw 20, \
      'tu.csv' using 1:(strptime("%Y-%m-%d", "${tu}")):2 with lines palette lw 20, \
