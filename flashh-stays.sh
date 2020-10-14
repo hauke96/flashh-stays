@@ -25,3 +25,7 @@ sed -i "s/\${date}/$DATE/" $OUTPUT_GNUPLOT
 gnuplot $OUTPUT_GNUPLOT
 
 echo "PNG $OUTPUT_PNG rendered"
+
+./flashh-stays-week.sh
+
+echo "Per week images rendered"
