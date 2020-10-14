@@ -37,11 +37,10 @@ set terminal pngcairo size 900,600 enhanced font 'Noto Sans,10'
 set output 'week-${week}-histogram.png'
 
 # Start the histogram plot
-set pm3d map
-splot 'mo.csv' using 1:(strptime("%Y-%m-%d", "${mo}")):2 with lines palette lw 20, \
-      'tu.csv' using 1:(strptime("%Y-%m-%d", "${tu}")):2 with lines palette lw 20, \
-      'we.csv' using 1:(strptime("%Y-%m-%d", "${we}")):2 with lines palette lw 20, \
-      'th.csv' using 1:(strptime("%Y-%m-%d", "${th}")):2 with lines palette lw 20, \
-      'fr.csv' using 1:(strptime("%Y-%m-%d", "${fr}")):2 with lines palette lw 20, \
-      'sa.csv' using 1:(strptime("%Y-%m-%d", "${sa}")):2 with lines palette lw 20, \
-      'su.csv' using 1:(strptime("%Y-%m-%d", "${su}")):2 with lines palette lw 20
+plot 'mo.csv' using 1:(strptime("%Y-%m-%d", "${mo}")):2 with lines palette lw 20, \
+     'tu.csv' using 1:(strptime("%Y-%m-%d", "${tu}")):2 with lines palette lw 20, \
+     'we.csv' using 1:(strptime("%Y-%m-%d", "${we}")):2 with lines palette lw 20, \
+     'th.csv' using 1:(strptime("%Y-%m-%d", "${th}")):2 with lines palette lw 20, \
+     'fr.csv' using 1:(strptime("%Y-%m-%d", "${fr}")):2 with lines palette lw 20, \
+     'sa.csv' using 1:(strptime("%Y-%m-%d", "${sa}")):2 with lines palette lw 20, \
+     'su.csv' using 1:(strptime("%Y-%m-%d", "${su}")):2 with lines palette lw 20
