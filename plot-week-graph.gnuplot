@@ -23,9 +23,8 @@ set format cb "%A"
 set cbrange [strptime("%Y-%m-%d", "${mo}")-60*60*12:strptime("%Y-%m-%d %H:%M", "${su} 12:00")]
 unset mcbtics
 
-set pal color
 set palette maxcolors 7
-#set palette defined (0 "red", 4 "navy", 5 "green", 6 "dark-green")
+set palette defined (0 "black", 2 "red", 4 "orange", 6 "dark-green")
 
 # Background grid
 set grid
